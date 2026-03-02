@@ -29,9 +29,6 @@ class MerchantRelationshipDataImportConfig extends DataImportConfig
         return $this->buildImporterConfiguration($moduleDataImportDirectory . 'merchant_relationship.csv', static::IMPORT_TYPE_MERCHANT_RELATIONSHIP);
     }
 
-    /**
-     * @return string
-     */
     protected function getModuleRoot(): string
     {
         $moduleRoot = realpath(

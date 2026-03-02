@@ -40,25 +40,16 @@ class MerchantRelationshipDataImportBusinessFactory extends DataImportBusinessFa
         return $dataImporter;
     }
 
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImportStep\DataImportStepInterface
-     */
     protected function createMerchantReferenceToIdMerchant(): DataImportStepInterface
     {
         return new MerchantReferenceToIdMerchantStep();
     }
 
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImportStep\DataImportStepInterface
-     */
     protected function createCompanyBusinessUnitKeyToIdCompanyBusinessUnitOwnerStep(): DataImportStepInterface
     {
         return new CompanyBusinessUnitOwnerKeyToIdCompanyBusinessUnitStep();
     }
 
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImportStep\DataImportStepInterface
-     */
     protected function createCompanyBusinessUnitAssigneeKeysToIdCompanyBusinessUnitAssigneeCollectionStep(): DataImportStepInterface
     {
         return new CompanyBusinessUnitAssigneeKeysToIdCompanyBusinessUnitCollectionStep();

@@ -16,35 +16,23 @@ class MerchantRelationshipDataImportHelper extends Module
 {
     use LocatorHelperTrait;
 
-    /**
-     * @return void
-     */
     public function assertDatabaseTableIsEmpty(): void
     {
         $query = $this->getMerchantRelationshipQuery();
         $this->assertSame(0, $query->count(), 'Found at least one entry in the database table but database table was expected to be empty.');
     }
 
-    /**
-     * @return void
-     */
     public function assertDatabaseTableContainsData(): void
     {
         $query = $this->getMerchantRelationshipQuery();
         $this->assertTrue($query->count() > 0, 'Expected at least one entry in the database table but database table is empty.');
     }
 
-    /**
-     * @return \Orm\Zed\MerchantRelationship\Persistence\SpyMerchantRelationshipQuery
-     */
     protected function getMerchantRelationshipQuery(): SpyMerchantRelationshipQuery
     {
         return SpyMerchantRelationshipQuery::create();
     }
 
-    /**
-     * @return \Spryker\Zed\CompanyBusinessUnit\Business\CompanyBusinessUnitFacadeInterface
-     */
     public function getCompanyBusinessUnitFacade(): CompanyBusinessUnitFacadeInterface
     {
         return $this->getLocator()->companyBusinessUnit()->facade();

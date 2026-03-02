@@ -35,9 +35,6 @@ class MerchantRelationshipDataImportPluginTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function testImportImportsData(): void
     {
         $this->tester->truncateMerchantRelationshipRelations();
@@ -70,21 +67,12 @@ class MerchantRelationshipDataImportPluginTest extends Unit
         $this->tester->assertDatabaseTableContainsData();
     }
 
-    /**
-     * @return void
-     */
     public function testGetImportTypeReturnsTypeOfImporter(): void
     {
         $dataImportPlugin = new MerchantRelationshipDataImportPlugin();
         $this->assertSame(MerchantRelationshipDataImportConfig::IMPORT_TYPE_MERCHANT_RELATIONSHIP, $dataImportPlugin->getImportType());
     }
 
-    /**
-     * @param int $idCompany
-     * @param string $key
-     *
-     * @return void
-     */
     protected function createCompanyBusinessUnit(int $idCompany, string $key): void
     {
         $seedData = [
@@ -102,9 +90,6 @@ class MerchantRelationshipDataImportPluginTest extends Unit
         $this->assertNotNull($createdTransfer->getIdCompanyBusinessUnit());
     }
 
-    /**
-     * @return void
-     */
     protected function createRelatedData(): void
     {
         $idCompany = $this->tester->haveCompany()->getIdCompany();

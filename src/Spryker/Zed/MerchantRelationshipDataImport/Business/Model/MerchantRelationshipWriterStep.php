@@ -16,11 +16,6 @@ use Spryker\Zed\MerchantRelationshipDataImport\Business\Model\DataSet\MerchantRe
 
 class MerchantRelationshipWriterStep implements DataImportStepInterface
 {
-    /**
-     * @param \Spryker\Zed\DataImport\Business\Model\DataSet\DataSetInterface $dataSet
-     *
-     * @return void
-     */
     public function execute(DataSetInterface $dataSet): void
     {
         $merchantRelationshipEntity = SpyMerchantRelationshipQuery::create()
@@ -35,12 +30,6 @@ class MerchantRelationshipWriterStep implements DataImportStepInterface
         $this->saveMerchantRelationshipToCompanyBusinessUnit($dataSet, $merchantRelationshipEntity->getPrimaryKey());
     }
 
-    /**
-     * @param \Spryker\Zed\DataImport\Business\Model\DataSet\DataSetInterface $dataSet
-     * @param int $idMerchantRelationship
-     *
-     * @return void
-     */
     protected function saveMerchantRelationshipToCompanyBusinessUnit(DataSetInterface $dataSet, int $idMerchantRelationship): void
     {
         SpyMerchantRelationshipToCompanyBusinessUnitQuery::create()

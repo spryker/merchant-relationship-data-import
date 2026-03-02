@@ -28,11 +28,6 @@ class CompanyBusinessUnitAssigneeKeysToIdCompanyBusinessUnitCollectionStep imple
      */
     protected $idCompanyBusinessUnitCache = [];
 
-    /**
-     * @param \Spryker\Zed\DataImport\Business\Model\DataSet\DataSetInterface $dataSet
-     *
-     * @return void
-     */
     public function execute(DataSetInterface $dataSet): void
     {
         if (!$dataSet[MerchantRelationshipDataSetInterface::COMPANY_BUSINESS_UNIT_ASSIGNEE_KEYS]) {
