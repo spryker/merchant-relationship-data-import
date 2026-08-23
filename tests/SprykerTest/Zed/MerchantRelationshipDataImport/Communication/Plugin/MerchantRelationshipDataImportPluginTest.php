@@ -56,7 +56,6 @@ class MerchantRelationshipDataImportPluginTest extends Unit
         $pluginReflection = new ReflectionClass($dataImportPlugin);
 
         $facadePropertyReflection = $pluginReflection->getParentClass()->getProperty('facade');
-        $facadePropertyReflection->setAccessible(true);
         $this->tester->mockFactoryMethod('createTransactionAwareDataSetStepBroker', new DataSetStepBroker());
         $facadePropertyReflection->setValue($dataImportPlugin, $this->tester->getFacade());
 
